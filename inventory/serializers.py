@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Pantry, FoodCategory, Food
+from .models import Pantry, FoodCategory, Food, PantryItem
 
 class FoodCategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -23,9 +23,17 @@ class FoodSerializer(serializers.ModelSerializer):
             data['expiration'] = days
         return data
 
+class PantryItemSerializer(serializers.ModelSerializer):
+    food = FoodSerializer(read_only=True)
+    class Meta:
+        model = PantryItem
+        fields = ('id', 'food', 'amount', 'purchase_date', 'purchase_price', 'purchase_location')
+        read_only_fields = fields
+    
 class PantrySerializer(serializers.ModelSerializer):
-    foods = FoodSerializer(many=True, read_only=True)
+    # foods = FoodSerializer(many=True, read_only=True)
+    pantry_items = PantryItemSerializer(many=True, read_only=True)
     class Meta:
         model = Pantry
-        fields = ('id', 'user', 'foods')
+        fields = ('id', 'user', 'pantry_items')
         read_only_fields = fields
