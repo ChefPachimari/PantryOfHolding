@@ -1,3 +1,5 @@
+from django.db.models import Q
+
 import django_filters
 from thefuzz import fuzz
 from .models import Food
@@ -12,7 +14,7 @@ class FoodFilter(django_filters.FilterSet):
 
     def filter_search(self, queryset, name, value):
         return queryset.filter(
-            Q(name__icontains=value) | Q(brand__icontains=value | Q(category__name__icontains=value))
+            Q(name__icontains=value) | Q(brand__icontains=value) | Q(category__name__icontains=value)
         )
 
     def filter_fuzzy_search(self, queryset, name, value):
