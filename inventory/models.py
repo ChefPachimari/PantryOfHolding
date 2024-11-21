@@ -27,6 +27,7 @@ class PantryItem(models.Model):
     food = models.ForeignKey('Food', on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
     units = models.CharField(max_length=255)
+    opened = models.BooleanField(default=False)
     purchase_date = models.DateField()
     purchase_price = models.DecimalField(max_digits=6, decimal_places=2)
     purchase_location = models.CharField(max_length=255)
