@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseForbidden
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from rest_framework.permissions import IsAuthenticated, AllowAny
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Pantry, FoodCategory, Food
 from .serializers import PantrySerializer, FoodCategorySerializer, FoodSerializer
+from .filters import FoodFilter
 
 class PantryViewSet(viewsets.ModelViewSet):
     """
@@ -24,3 +26,5 @@ class FoodViewSet(viewsets.ModelViewSet):
     permission_classes = [AllowAny]
     serializer_class = FoodSerializer
     queryset = Food.objects.all()
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    search_fields = ['name', 'brand']  # Adjust fields as necessary
