@@ -22,10 +22,11 @@ class FoodCategoryViewSet(viewsets.ModelViewSet):
     serializer_class = FoodCategorySerializer
     queryset = FoodCategory.objects.all()
 
-class FoodViewSet(viewsets.ModelViewSet):
+class FoodViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny]
     serializer_class = FoodSerializer
     queryset = Food.objects.all()  # is there a way to optimize this for performance?
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filterset_class = FoodFilter
     search_fields = ['name', 'brand']  # Adjust fields as necessary
+    
