@@ -35,15 +35,6 @@ class FoodSerializer(serializers.ModelSerializer):
         model = Food
         fields = ('id', 'name', 'brand', 'category', 'department', 'expiration', 'food_icon')
         read_only_fields = fields
-    
-    def to_representation(self, instance):
-        """
-            Used to make some modifications convert `expiration` from seconds to days
-        """
-        data = super().to_representation(instance)
-        if 'expiration' in data and data['expiration'] is not None:
-
-        return data
 
 class PantryItemSerializer(serializers.ModelSerializer):
     food = FoodSerializer(read_only=True)
