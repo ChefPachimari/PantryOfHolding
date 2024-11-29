@@ -90,6 +90,7 @@ class Food(models.Model):
     name = models.CharField(max_length=255)
     brand = models.CharField(max_length=255)
     category = models.ForeignKey(FoodCategory, on_delete=models.CASCADE)
+    food_icon = models.ImageField(upload_to='food_icons/', null=True, blank=True)
 
     #overrides
     department = models.CharField(choices=department_choices, max_length=255, null=True, blank=True)
