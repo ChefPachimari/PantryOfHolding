@@ -1,0 +1,636 @@
+{
+    "data": [
+        {
+            "productId": "0004126001015",
+            "upc": "0004126001015",
+            "productPageURI": "/p/kroger-mint-flavor-milk-of-magnesia/0004126001015?cid=dis.api.tpi_products-api_20240521_b:all_c:np_t:pantryrd-24326124303",
+            "aisleLocations": [],
+            "brand": "Kroger",
+            "categories": [
+                "Health"
+            ],
+            "countryOrigin": "UNITED STATES",
+            "description": "Kroger® Mint Flavor Milk of Magnesia",
+            "images": [
+                {
+                    "perspective": "left",
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/left/0004126001015"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/left/0004126001015"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/left/0004126001015"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/left/0004126001015"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/left/0004126001015"
+                        }
+                    ]
+                },
+                {
+                    "perspective": "right",
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/right/0004126001015"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/right/0004126001015"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/right/0004126001015"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/right/0004126001015"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/right/0004126001015"
+                        }
+                    ]
+                },
+                {
+                    "perspective": "front",
+                    "featured": true,
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/front/0004126001015"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/front/0004126001015"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/front/0004126001015"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/front/0004126001015"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/front/0004126001015"
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "itemId": "0004126001015",
+                    "favorite": false,
+                    "fulfillment": {
+                        "curbside": false,
+                        "delivery": false,
+                        "inStore": false,
+                        "shipToHome": false
+                    },
+                    "size": "12 fl oz"
+                }
+            ],
+            "itemInformation": {},
+            "temperature": {
+                "indicator": "Ambient",
+                "heatSensitive": false
+            }
+        },
+        {
+            "productId": "0001111038546",
+            "upc": "0001111038546",
+            "productPageURI": "/p/kroger-original-flavor-milk-of-magnesia/0001111038546?cid=dis.api.tpi_products-api_20240521_b:all_c:np_t:pantryrd-24326124303",
+            "aisleLocations": [],
+            "brand": "Kroger",
+            "categories": [
+                "Health"
+            ],
+            "description": "Kroger® Original Flavor Milk of Magnesia",
+            "images": [
+                {
+                    "perspective": "left",
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/left/0001111038546"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/left/0001111038546"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/left/0001111038546"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/left/0001111038546"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/left/0001111038546"
+                        }
+                    ]
+                },
+                {
+                    "perspective": "front",
+                    "featured": true,
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/front/0001111038546"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/front/0001111038546"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/front/0001111038546"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/front/0001111038546"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/front/0001111038546"
+                        }
+                    ]
+                },
+                {
+                    "perspective": "right",
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/right/0001111038546"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/right/0001111038546"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/right/0001111038546"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/right/0001111038546"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/right/0001111038546"
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "itemId": "0001111038546",
+                    "favorite": false,
+                    "fulfillment": {
+                        "curbside": false,
+                        "delivery": false,
+                        "inStore": false,
+                        "shipToHome": false
+                    },
+                    "size": "12 fl oz"
+                }
+            ],
+            "itemInformation": {},
+            "temperature": {
+                "indicator": "Ambient",
+                "heatSensitive": false
+            }
+        },
+        {
+            "productId": "0001111038547",
+            "upc": "0001111038547",
+            "productPageURI": "/p/kroger-mint-flavor-milk-of-magnesia/0001111038547?cid=dis.api.tpi_products-api_20240521_b:all_c:np_t:pantryrd-24326124303",
+            "aisleLocations": [],
+            "brand": "Kroger",
+            "categories": [
+                "Health"
+            ],
+            "description": "Kroger® Mint Flavor Milk of Magnesia",
+            "images": [
+                {
+                    "perspective": "front",
+                    "featured": true,
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/front/0001111038547"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/front/0001111038547"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/front/0001111038547"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/front/0001111038547"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/front/0001111038547"
+                        }
+                    ]
+                },
+                {
+                    "perspective": "back",
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/back/0001111038547"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/back/0001111038547"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/back/0001111038547"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/back/0001111038547"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/back/0001111038547"
+                        }
+                    ]
+                },
+                {
+                    "perspective": "right",
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/right/0001111038547"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/right/0001111038547"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/right/0001111038547"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/right/0001111038547"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/right/0001111038547"
+                        }
+                    ]
+                },
+                {
+                    "perspective": "left",
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/left/0001111038547"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/left/0001111038547"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/left/0001111038547"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/left/0001111038547"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/left/0001111038547"
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "itemId": "0001111038547",
+                    "favorite": false,
+                    "fulfillment": {
+                        "curbside": false,
+                        "delivery": false,
+                        "inStore": false,
+                        "shipToHome": false
+                    },
+                    "size": "12 fl oz"
+                }
+            ],
+            "itemInformation": {},
+            "temperature": {
+                "indicator": "Ambient",
+                "heatSensitive": false
+            }
+        },
+        {
+            "productId": "0001111085333",
+            "upc": "0001111085333",
+            "productPageURI": "/p/kroger-lactose-free-vitamin-d-milk/0001111085333?cid=dis.api.tpi_products-api_20240521_b:all_c:np_t:pantryrd-24326124303",
+            "aisleLocations": [],
+            "brand": "Kroger",
+            "categories": [
+                "Dairy"
+            ],
+            "description": "Kroger® Lactose Free Vitamin D Milk",
+            "images": [
+                {
+                    "perspective": "front",
+                    "featured": true,
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/front/0001111085333"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/front/0001111085333"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/front/0001111085333"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/front/0001111085333"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/front/0001111085333"
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "itemId": "0001111085333",
+                    "favorite": false,
+                    "fulfillment": {
+                        "curbside": false,
+                        "delivery": false,
+                        "inStore": false,
+                        "shipToHome": false
+                    },
+                    "size": "1/2 gal"
+                }
+            ],
+            "itemInformation": {},
+            "temperature": {
+                "indicator": "Refrigerated",
+                "heatSensitive": false
+            }
+        },
+        {
+            "productId": "0001111050411",
+            "upc": "0001111050411",
+            "productPageURI": "/p/kroger-probiotic-lowfat-milk/0001111050411?cid=dis.api.tpi_products-api_20240521_b:all_c:np_t:pantryrd-24326124303",
+            "aisleLocations": [],
+            "brand": "Kroger",
+            "categories": [
+                "Dairy"
+            ],
+            "description": "Kroger® Probiotic Lowfat Milk",
+            "images": [
+                {
+                    "perspective": "front",
+                    "featured": true,
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/front/0001111050411"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/front/0001111050411"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/front/0001111050411"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/front/0001111050411"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/front/0001111050411"
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "itemId": "0001111050411",
+                    "favorite": false,
+                    "fulfillment": {
+                        "curbside": false,
+                        "delivery": false,
+                        "inStore": false,
+                        "shipToHome": false
+                    },
+                    "size": "1/2 gal"
+                }
+            ],
+            "itemInformation": {},
+            "temperature": {
+                "indicator": "Refrigerated",
+                "heatSensitive": false
+            }
+        },
+        {
+            "productId": "0001111050452",
+            "upc": "0001111050452",
+            "productPageURI": "/p/kroger-blended-blueberry-flavor-nonfat-greek-yogurt-cup/0001111050452?cid=dis.api.tpi_products-api_20240521_b:all_c:np_t:pantryrd-24326124303",
+            "aisleLocations": [],
+            "brand": "Kroger",
+            "categories": [
+                "Dairy"
+            ],
+            "description": "Kroger® Blended Blueberry Flavor Nonfat Greek Yogurt Cup",
+            "images": [
+                {
+                    "perspective": "left",
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/left/0001111050452"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/left/0001111050452"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/left/0001111050452"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/left/0001111050452"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/left/0001111050452"
+                        }
+                    ]
+                },
+                {
+                    "perspective": "front",
+                    "featured": true,
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/front/0001111050452"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/front/0001111050452"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/front/0001111050452"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/front/0001111050452"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/front/0001111050452"
+                        }
+                    ]
+                },
+                {
+                    "perspective": "right",
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/right/0001111050452"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/right/0001111050452"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/right/0001111050452"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/right/0001111050452"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/right/0001111050452"
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "itemId": "0001111050452",
+                    "favorite": false,
+                    "fulfillment": {
+                        "curbside": false,
+                        "delivery": false,
+                        "inStore": false,
+                        "shipToHome": false
+                    },
+                    "size": "5.3 oz"
+                }
+            ],
+            "itemInformation": {},
+            "temperature": {
+                "indicator": "Refrigerated",
+                "heatSensitive": false
+            }
+        },
+        {
+            "productId": "0001111087762",
+            "upc": "0001111087762",
+            "productPageURI": "/p/kroger-non-dairy-amaretto-coffee-creamer/0001111087762?cid=dis.api.tpi_products-api_20240521_b:all_c:np_t:pantryrd-24326124303",
+            "aisleLocations": [],
+            "brand": "Kroger",
+            "categories": [
+                "Dairy"
+            ],
+            "description": "Kroger® Non-Dairy Amaretto Coffee Creamer",
+            "images": [
+                {
+                    "perspective": "front",
+                    "featured": true,
+                    "sizes": [
+                        {
+                            "size": "xlarge",
+                            "url": "https://www.kroger.com/product/images/xlarge/front/0001111087762"
+                        },
+                        {
+                            "size": "large",
+                            "url": "https://www.kroger.com/product/images/large/front/0001111087762"
+                        },
+                        {
+                            "size": "medium",
+                            "url": "https://www.kroger.com/product/images/medium/front/0001111087762"
+                        },
+                        {
+                            "size": "small",
+                            "url": "https://www.kroger.com/product/images/small/front/0001111087762"
+                        },
+                        {
+                            "size": "thumbnail",
+                            "url": "https://www.kroger.com/product/images/thumbnail/front/0001111087762"
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "itemId": "0001111087762",
+                    "favorite": false,
+                    "fulfillment": {
+                        "curbside": false,
+                        "delivery": false,
+                        "inStore": false,
+                        "shipToHome": false
+                    },
+                    "size": "15 oz"
+                }
+            ],
+            "itemInformation": {},
+            "temperature": {
+                "indicator": "Ambient",
+                "heatSensitive": false
+            }
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "start": 0,
+            "limit": 50,
+            "total": 45
+        }
+    }
+}
