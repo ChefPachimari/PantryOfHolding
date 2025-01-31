@@ -13,36 +13,9 @@ class KrogerClient():
         """
         client_id = None
         client_secret = None
-        self._load_credentials()
-
-    def _load_credentials(self):
-        """ Load the creds from the /dev/ directory or from secrets manager
-        """
-        if settings.DEBUG:
-            with open('dev/creds', 'r') as file:
-                creds = json.load(file)
-            self.client_id = creds.get('client_id')
-            self.client_secret = creds.get('client_secret')
-        else:
-            # TODO: Finish this skeleton off before deployment for production
-            pass
-            # project_id = "skeleton"
-            # client_id_secret_id = "skeleton"
-            # client_secret_secret_id = "skeleton"
-            # version_id = "latest"
-
-            # client = secretmanager.SecretManagerServiceClient()
-            
-            # client_id_name = f"projects/{project_id}/secrets/{client_id_secret_id}/versions/{version_id}"
-            # client_secret_name = f"projects/{project_id}/secrets/{client_secret_secret_id}/versions/{version_id}"
-            
-            # client_id_response = client.access_secret_version(request={"name": client_id_name})
-            # client_secret_response = client.access_secret_version(request={"name": client_secret_name})
-            
-            # self.client_id = client_id_response.payload.data.decode("UTF-8")
-            # self.client_secret = client_secret_response.payload.data.decode("UTF-8")
-
-    def _kroger_request(self, method, endpoint, headers, data=None, timeout=5):
+        self.access_token = self.get_access()
+        
+    def _kroger_request(self, method, endpoint, headers={}, data=None, timeout=5):
         """ Generalizes the HTTP calls to the Kroger API, this is a private function and should not be called directly
 
         Args:
@@ -64,7 +37,7 @@ class KrogerClient():
         headers |= {'Authorization': f'bearer {self.access_token}'}
         try:
             if method == 'GET':
-                response = requests.get(endpoint, headers=headers, params=params, timeout=timeout)
+                response = requests.get(endpoint, headers=headers, params=data, timeout=timeout)
             elif method == 'POST':
                 response = requests.post(endpoint, headers=headers, data=data, timeout=timeout)
             else:
@@ -86,24 +59,30 @@ class KrogerClient():
         Returns:
             _string_: just the access token
         """
-        # intentionally left blank, please fill in the client_id and client_secret
+        if settings.DEBUG:
+            with open('dev/creds', 'r') as file:
+                creds = json.load(file)
+            client_id = creds.get('client_id')
+            client_secret = creds.get('client_secret')
+        else:
+            pass
+            # TODO: finish building the GCP secrets manager version, important for production
+            # nested method simplifies calling the secret manager since we don't need this outside of this function
+            # def access_secret_version(project_id, secret_id, version_id):
+            #     client = secretmanager.SecretManagerServiceClient()
+            #     name = f"projects/{project_id}/secrets/{secret_id}/versions/{version_id}"
+            #     response = client.access_secret_version(request={"name": name})
+            #     return response.payload.data.decode("UTF-8")
 
-        # nested method simplifies calling the secret manager since we don't need this outside of this function
-        def access_secret_version(project_id, secret_id, version_id):
-            client = secretmanager.SecretManagerServiceClient()
-            name = f"projects/{project_id}/secrets/{secret_id}/versions/{version_id}"
-            response = client.access_secret_version(request={"name": name})
-            return response.payload.data.decode("UTF-8")
+            # project_id = "your-gcp-project-id"
+            # client_id_secret_id = "your-client-id-secret-id"
+            # client_secret_secret_id = "your-client-secret-secret-id"
+            # version_id = "latest"
 
-        project_id = "your-gcp-project-id"
-        client_id_secret_id = "your-client-id-secret-id"
-        client_secret_secret_id = "your-client-secret-secret-id"
-        version_id = "latest"
-
-        client_id = access_secret_version(project_id, client_id_secret_id, version_id)
-        client_secret = access_secret_version(project_id, client_secret_secret_id, version_id)
-        client_id = ''
-        client_secret = ''
+            # client_id = access_secret_version(project_id, client_id_secret_id, version_id)
+            # client_secret = access_secret_version(project_id, client_secret_secret_id, version_id)
+            # client_id = ''
+            # client_secret = ''
         encoded_credentials = base64.b64encode(f"{client_id}:{client_secret}".encode('utf-8')).decode('utf-8')
         payload = {
             'grant_type': 'client_credentials',
@@ -114,8 +93,13 @@ class KrogerClient():
             'Authorization': 'Basic ' + encoded_credentials,
         }
         
-        kroger_request('POST', 'connect/oauth2/token', headers, payload)
-        return response['access_token']
+        response = requests.post(
+            'https://api-ce.kroger.com/v1/connect/oauth2/token',
+            headers=headers,
+            data=payload
+        )
+        response.raise_for_status()
+        return response.json()['access_token']
 
     def get_products(self, term, **kwargs):
         """ Gets products based on criteria from Kroger public API.  Currently implementing a subsect of filters
@@ -128,16 +112,15 @@ class KrogerClient():
         # the term is the only one we are enforcing currently
         payload = {'filter.term': term}
         # Add additional filters from kwargs
-        for key, value in kwargs.items():
-            params[f'filter.{key}'] = value
-
-        return _kroger_request('GET', 'products', headers=headers, data=payload)
+        payload |= kwargs
+        return self._kroger_request('GET', 'products', data=payload)
 
     def get_location(self, zipcode):
         """ gets the location of a Kroger store based on a zipcode.  Can be used by get_products to get products in a specific store
 
         Args:
             zipcode (string): US zipcode to search for Kroger locations
+
         Returns:
             _list_: list of locations within the radius of the zipcode
         """       
@@ -148,6 +131,6 @@ class KrogerClient():
             'filter.radiusInMiles': 25,  # TODO: make this configurable down the road
             'filter.chain': 'Kroger'
         }
-        kroger_request('GET', 'locations', headers=headers, params=params)
+        self._kroger_request('GET', 'locations', params=params)
         api_response = requests.get(api_url, headers=headers, params=params, timeout=5)
         return json.loads(api_response.json())
