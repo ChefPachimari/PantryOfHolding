@@ -7,9 +7,13 @@ from django.conf import settings
 from google.cloud import secretmanager
 
 class KrogerClient():
-    
-    client_id = None
-    client_secret = None
+
+    def __init__(self):
+        """ Initializes the KrogerClient, loads the credentials from the /dev/ directory or from secrets manager
+        """
+        client_id = None
+        client_secret = None
+        self._load_credentials()
 
     def _load_credentials(self):
         """ Load the creds from the /dev/ directory or from secrets manager
@@ -56,6 +60,8 @@ class KrogerClient():
             _type_: json response from the API
         """
         endpoint = f"https://api-ce.kroger.com/v1/{endpoint}"
+        # merge auth into headers
+        headers |= {'Authorization': f'bearer {self.access_token}'}
         try:
             if method == 'GET':
                 response = requests.get(endpoint, headers=headers, params=params, timeout=timeout)
@@ -111,17 +117,14 @@ class KrogerClient():
         kroger_request('POST', 'connect/oauth2/token', headers, payload)
         return response['access_token']
 
-    def get_products(self, term, access_token, **kwargs):
+    def get_products(self, term, **kwargs):
         """ Gets products based on criteria from Kroger public API.  Currently implementing a subsect of filters
         with kwargs for future expansion.
         Full documentation: https://developer.kroger.com/api-products/api/product-api-partner
 
         Args:
             term (_tstringype_): required, search term used for Kroger's fuzzy search
-            access_token (string): required, token from get_access
-        """
-        headers = {'Authorization': f'bearer {access_token}'}
-        
+        """      
         # the term is the only one we are enforcing currently
         payload = {'filter.term': term}
         # Add additional filters from kwargs
@@ -130,18 +133,14 @@ class KrogerClient():
 
         return _kroger_request('GET', 'products', headers=headers, data=payload)
 
-    def get_location(self, zipcode, access_token):
+    def get_location(self, zipcode):
         """ gets the location of a Kroger store based on a zipcode.  Can be used by get_products to get products in a specific store
 
         Args:
             zipcode (string): US zipcode to search for Kroger locations
-            access_token (string): required, token from get_access
-
         Returns:
             _list_: list of locations within the radius of the zipcode
-        """
-        headers = {'Authorization': f'bearer {access_token}'}
-        
+        """       
         # for now we're basing off a 25mi radius around a zipcode and only looking for Kroger locations
         # TODO: do we want to expand this to other chains?
         params = {
@@ -152,9 +151,3 @@ class KrogerClient():
         kroger_request('GET', 'locations', headers=headers, params=params)
         api_response = requests.get(api_url, headers=headers, params=params, timeout=5)
         return json.loads(api_response.json())
-
-    # usage samples
-    # access_token = get_access()
-    # get_location('12345', access_token)
-    # get_products('milk', 'Kroger', 0, 10, access_token)
-
