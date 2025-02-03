@@ -101,19 +101,28 @@ class KrogerClient():
         response.raise_for_status()
         return response.json()['access_token']
 
-    def get_products(self, term, **kwargs):
+    def get_products(self, **kwargs):
         """ Gets products based on criteria from Kroger public API.  Currently implementing a subsect of filters
         with kwargs for future expansion.
         Full documentation: https://developer.kroger.com/api-products/api/product-api-partner
 
         Args:
             term (_tstringype_): required, search term used for Kroger's fuzzy search
-        """      
+        """
+        # a product id lookup against the Kroger API
+        if 'upc' in kwargs:
+            # if we have a UPC we should use the UPC endpoint
+            endpoint = f'products/{kwargs['upc']}'
+            response = self._kroger_request('GET', endpoint)
+            return response['data']
+
+        # a term search against the Kroger API
         # the term is the only one we are enforcing currently
         payload = {'filter.term': term}
         # Add additional filters from kwargs
         payload |= kwargs
-        return self._kroger_request('GET', 'products', data=payload)
+        response = self._kroger_request('GET', 'products', data=payload)
+        return response['data']
 
     def get_location(self, zipcode):
         """ gets the location of a Kroger store based on a zipcode.  Can be used by get_products to get products in a specific store
