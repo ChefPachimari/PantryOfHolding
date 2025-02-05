@@ -29,6 +29,7 @@ class FoodFilter(django_filters.FilterSet):
             food.fuzzy_score = fuzz.ratio(food.name, value)
 
         # Sort the queryset by the fuzzy_score in descending order
+        # TODO: This might be a performance bottleneck for large datasets
         sorted_queryset = sorted(
             annotated_queryset,
             key=lambda food: food.fuzzy_score,
