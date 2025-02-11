@@ -87,7 +87,9 @@ class Food(models.Model):
         ('bakery', 'Bakery'),
         ('freezer', 'Freezer'),
     )
+    # TODO: do we need an internal UUID?
     name = models.CharField(max_length=255)
+    upc = models.CharField(max_length=12, unique=True)  # Universal Product Codes are intended to be unique and shouldn't collide so we can unique it
     brand = models.CharField(max_length=255)
     category = models.ForeignKey(FoodCategory, on_delete=models.CASCADE)
     food_icon = models.ImageField(upload_to='food_icons/', null=True, blank=True)
