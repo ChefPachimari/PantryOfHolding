@@ -110,10 +110,14 @@ class KrogerClient():
             term (_tstringype_): required, search term used for Kroger's fuzzy search
         """      
         # the term is the only one we are enforcing currently
-        payload = {'filter.term': term}
+        payload = {'filter.term': kwargs['term'],
+                'filter.brand': kwargs.get('brand', None),
+                'filter.locationId': kwargs.get('location_id', None),
+                }
         # Add additional filters from kwargs
-        payload |= kwargs
-        return self._kroger_request('GET', 'products', data=payload)
+        # payload |= kwargs
+        response = self._kroger_request('GET', 'products', data=payload)
+        return response['data']
 
     def get_location(self, zipcode):
         """ gets the location of a Kroger store based on a zipcode.  Can be used by get_products to get products in a specific store
@@ -126,11 +130,10 @@ class KrogerClient():
         """       
         # for now we're basing off a 25mi radius around a zipcode and only looking for Kroger locations
         # TODO: do we want to expand this to other chains?
-        params = {
+        data = {
             'filter.zipCode.near': zipcode,  # TODO: look into other filters, address maybe?
             'filter.radiusInMiles': 25,  # TODO: make this configurable down the road
             'filter.chain': 'Kroger'
         }
-        self._kroger_request('GET', 'locations', params=params)
-        api_response = requests.get(api_url, headers=headers, params=params, timeout=5)
-        return json.loads(api_response.json())
+        response = self._kroger_request('GET', 'locations', data=data)
+        return response['data'][0]
