@@ -1,8 +1,12 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .models import User
+from .models import User, DietaryRestriction
 
+class DietaryRestrictionAdmin(admin.ModelAdmin):
+    model = DietaryRestriction
+    
+admin.site.register(DietaryRestriction, DietaryRestrictionAdmin)
 
 class UserAdmin(UserAdmin):
     model = User

@@ -5,6 +5,9 @@ import django.contrib.auth.validators
 import django.utils.timezone
 from django.db import migrations, models
 
+def load_dietary_restrictions(apps, schema_editor):
+    from django.core.management import call_command
+    call_command('loaddata', 'dietary_restrictions.json')
 
 class Migration(migrations.Migration):
 
@@ -49,4 +52,5 @@ class Migration(migrations.Migration):
                 ('objects', django.contrib.auth.models.UserManager()),
             ],
         ),
+        migrations.RunPython(load_dietary_restrictions),
     ]

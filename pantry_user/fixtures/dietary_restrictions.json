@@ -1,0 +1,51 @@
+[
+    {
+        "model": "pantry_user.dietaryrestriction",
+        "pk": 1,
+        "fields": {
+            "name": "Vegetarian"
+        }
+    },
+    {
+        "model": "pantry_user.dietaryrestriction",
+        "pk": 2,
+        "fields": {
+            "name": "Vegan"
+        }
+    },
+    {
+        "model": "pantry_user.dietaryrestriction",
+        "pk": 3,
+        "fields": {
+            "name": "Gluten Free"
+        }
+    },
+    {
+        "model": "pantry_user.dietaryrestriction",
+        "pk": 4,
+        "fields": {
+            "name": "Dairy Free"
+        }
+    },
+    {
+        "model": "pantry_user.dietaryrestriction",
+        "pk": 5,
+        "fields": {
+            "name": "Nut Free"
+        }
+    },
+    {
+        "model": "pantry_user.dietaryrestriction",
+        "pk": 6,
+        "fields": {
+            "name": "Halal"
+        }
+    },
+    {
+        "model": "pantry_user.dietaryrestriction",
+        "pk": 7,
+        "fields": {
+            "name": "Kosher"
+        }
+    }
+]
