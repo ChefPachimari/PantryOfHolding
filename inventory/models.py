@@ -1,10 +1,32 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+class DietaryRestriction(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
+
 class User(AbstractUser):
     """
         Model in case we want to enhance the user down the road
     """
+    
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
+    email = models.EmailField(unique=True)
+    
+    dietary_restrictions_choices = (
+        ('none', 'None'),
+        ('vegetarian', 'Vegetarian'),
+        ('vegan', 'Vegan'),
+        ('gluten_free', 'Gluten Free'),
+        ('dairy_free', 'Dairy Free'),
+        ('nut_free', 'Nut Free'),
+        ('halal', 'Halal'),
+        ('kosher', 'Kosher'),
+    )
+    dietary_restrictions = models.ManyToManyField('DietaryRestriction', blank=True)
 
 class Pantry(models.Model):
     """ 
