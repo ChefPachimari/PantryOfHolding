@@ -14,7 +14,7 @@ class User(AbstractUser):
     """
     
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    REQUIRED_FIELDS = []
+    
     email = models.EmailField(unique=True)
-
     dietary_restrictions = models.ManyToManyField('DietaryRestriction', blank=True)
